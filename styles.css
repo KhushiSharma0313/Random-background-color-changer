@@ -1,14 +1,6 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
-  --primary-color: #0a0a0a;
-  --secondary-color: #000000; /* Changed to black */
+  --primary-color: #0a0a0a; /* Default dark background */
+  --secondary-color: #f0f0f0; /* Default light text */
   --highlight-color: #ff4f78;
   --button-color: #ff4f78;
   --button-hover-color: #ff8c94;
@@ -25,7 +17,7 @@ body {
   justify-content: center;
   height: 100vh;
   text-align: center;
-  transition: background-color 1s ease;
+  transition: background-color 1s ease, color 0.3s ease;
 }
 
 .bg-information-container {
@@ -50,7 +42,7 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Updated transition properties */
+  transition: background-color 0.3s ease, color 0.3s ease;
   box-shadow: 0 8px 25px rgba(255, 79, 120, 0.5);
 }
 
