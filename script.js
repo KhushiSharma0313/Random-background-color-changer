@@ -67,7 +67,7 @@ const darkColorsArr = [
 ];
 
 function getRandomIndex() {
-  return Math.floor(darkColorsArr.length * Math.random());
+  return Math.floor(Math.random() * darkColorsArr.length);
 }
 
 const body = document.querySelector("body");
@@ -76,10 +76,41 @@ const bgHexCodeSpanElement = document.querySelector("#bg-hex-code");
 function changeBackgroundColor() {
   const color = darkColorsArr[getRandomIndex()];
 
-  bgHexCodeSpanElement.innerText = color;
+  // Update background color
   body.style.backgroundColor = color;
+  
+  // Update hex code display
+  bgHexCodeSpanElement.innerText = color;
+
+  // Determine text color based on background luminance
+  const textColor = getTextColorForBackground(color);
+  body.style.color = textColor;
+}
+
+function getTextColorForBackground(bgColor) {
+  // Convert background color to RGB
+  const rgb = hexToRgb(bgColor);
+  
+  // Calculate luminance (brightness) of the background color
+  const luminance = (0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b) / 255;
+
+  // Return black or white based on luminance threshold
+  return luminance > 0.5 ? "#000000" : "#FFFFFF";
+}
+
+function hexToRgb(hex) {
+  // Remove '#' if present
+  hex = hex.replace(/^#/, '');
+
+  // Parse hex to RGB
+  let bigint = parseInt(hex, 16);
+  let r = (bigint >> 16) & 255;
+  let g = (bigint >> 8) & 255;
+  let b = bigint & 255;
+
+  return { r, g, b };
 }
 
 const btn = document.querySelector("#btn");
 
-btn.onclick = changeBackgroundColor; // Assign the function reference
+btn.addEventListener("click", changeBackgroundColor);
