@@ -7,57 +7,62 @@
 }
 
 :root {
-  --yellow: #f1be32;
-  --golden-yellow: #feac32;
-  --dark-purple: #110815;
-  --light-grey: #efefef;
+  --primary-color: #1a1a1a;
+  --secondary-color: #f1f1f1;
+  --highlight-color: #ff6f61;
+  --button-color: #ff6f61;
+  --button-hover-color: #ff3d2e;
+  --container-bg-color: rgba(255, 255, 255, 0.1);
 }
 
 body {
-  background-color: var(--dark-purple);
-  color: var(--light-grey);
-  text-align: center;
-  font-family: Arial, sans-serif;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  text-align: center;
   transition: background-color 1s ease;
 }
 
 .bg-information-container {
-  margin: 20px 0 30px;
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+  margin: 20px 0;
+  padding: 15px 25px;
+  background: var(--container-bg-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-size: 1.2rem;
 }
 
 .btn {
   cursor: pointer;
-  padding: 15px 30px;
-  margin: 15px;
-  color: var(--dark-purple);
-  background-color: var(--golden-yellow);
-  background-image: linear-gradient(#fecc4c, #ffac33);
-  border: 3px solid var(--golden-yellow);
-  border-radius: 8px;
-  font-size: 1.2rem;
-  transition: background-image 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 12px 25px;
+  margin: 20px;
+  color: var(--secondary-color);
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 111, 97, 0.4);
 }
 
 .btn:hover {
-  background-image: linear-gradient(#ffcc4c, #f89808);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  background-color: var(--button-hover-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 61, 46, 0.5);
 }
 
 #bg-hex-code {
   font-weight: bold;
-  font-size: 1.5rem;
-  margin-top: 10px;
+  font-size: 1.8rem;
+  color: var(--highlight-color);
+  margin-top: 15px;
   animation: fadeIn 0.5s ease;
 }
 
