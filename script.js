@@ -79,8 +79,9 @@ function changeBackgroundColor() {
   // Update background color
   body.style.backgroundColor = color;
   
-  // Update hex code display
+  // Update hex code display and its text color
   bgHexCodeSpanElement.innerText = color;
+  bgHexCodeSpanElement.style.color = getTextColorForBackground(color);
 
   // Determine text color based on background luminance
   const textColor = getTextColorForBackground(color);
