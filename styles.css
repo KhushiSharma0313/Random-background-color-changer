@@ -7,8 +7,8 @@
 }
 
 :root {
-  --primary-color: #1a1a1a;
-  --secondary-color: #f1f1f1;
+  --primary-color: #0d0d0d;
+  --secondary-color: #ffffff;
   --highlight-color: #ff6f61;
   --button-color: #ff6f61;
   --button-hover-color: #ff3d2e;
@@ -18,7 +18,7 @@
 body {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,47 +30,49 @@ body {
 
 .bg-information-container {
   margin: 20px 0;
-  padding: 15px 25px;
+  padding: 20px;
   background: var(--container-bg-color);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  font-size: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  font-size: 1.5rem;
+  width: 80%;
+  max-width: 500px;
 }
 
 .btn {
   cursor: pointer;
-  padding: 12px 25px;
-  margin: 20px;
+  padding: 15px 35px;
+  margin: 30px;
   color: var(--secondary-color);
   background-color: var(--button-color);
   border: none;
   border-radius: 50px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 20px rgba(255, 111, 97, 0.4);
+  box-shadow: 0 8px 25px rgba(255, 111, 97, 0.5);
 }
 
 .btn:hover {
   background-color: var(--button-hover-color);
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255, 61, 46, 0.5);
+  box-shadow: 0 12px 30px rgba(255, 61, 46, 0.6);
 }
 
 #bg-hex-code {
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--highlight-color);
-  margin-top: 15px;
-  animation: fadeIn 0.5s ease;
+  margin-top: 20px;
+  animation: scaleIn 0.3s ease;
 }
 
-@keyframes fadeIn {
+@keyframes scaleIn {
   from {
-    opacity: 0;
+    transform: scale(0);
   }
   to {
-    opacity: 1;
+    transform: scale(1);
   }
 }
