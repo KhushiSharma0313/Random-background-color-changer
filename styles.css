@@ -42,7 +42,7 @@ body {
 .btn {
   cursor: pointer;
   padding: 15px 35px;
-  margin: 30px;
+  margin-top: 30px;
   color: var(--secondary-color);
   background-color: var(--button-color);
   border: none;
@@ -50,14 +50,14 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Updated transition properties */
   box-shadow: 0 8px 25px rgba(255, 79, 120, 0.5);
 }
 
 .btn:hover {
   background-color: var(--button-hover-color);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255, 140, 148, 0.6);
+  color: var(--primary-color); /* Change text color on hover */
+  box-shadow: 0 8px 25px rgba(255, 79, 120, 0.5); /* Maintain box shadow */
 }
 
 #bg-hex-code {
@@ -66,7 +66,7 @@ body {
   color: var(--highlight-color);
   margin-top: 20px;
   animation: fadeInUp 0.5s ease;
-  display: inline-block;
+  display: block; /* Changed to display block for proper alignment */
 }
 
 @keyframes fadeInUp {
